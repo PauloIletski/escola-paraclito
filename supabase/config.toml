@@ -1,0 +1,11 @@
+project_id = "escola-paracleto"
+
+[db.migrations]
+schema_paths = ["./schemas/*.sql"]
+
+[auth]
+enable_signup = false
+minimum_password_length = 8
+
+[functions.manage-account]
+verify_jwt = true

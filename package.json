@@ -1,0 +1,44 @@
+{
+  "name": "escola-paracleto",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "db:status": "supabase migration list --remote=bxnlawrzadhjkhceobpx",
+    "db:query": "supabase db query --remote=bxnlawrzadhjkhceobpx",
+    "db:migrate": "supabase db push --remote=bxnlawrzadhjkhceobpx",
+    "db:seed": "supabase db query --remote=bxnlawrzadhjkhceobpx --file supabase/seed.sql",
+    "db:advisors": "supabase db advisors --remote=bxnlawrzadhjkhceobpx --type security --fail-on error",
+    "format": "prettier --write src tests scripts supabase/functions docs README.md package.json index.html",
+    "format:check": "prettier --check src tests scripts supabase/functions docs README.md package.json index.html",
+    "test": "node --test tests/*.test.mjs",
+    "test:remote:teachers": "node scripts/verify-teachers.mjs",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.119.0",
+    "lucide-react": "1.72.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.16",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "prettier": "3.10.0",
+    "supabase": "3.1.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.6"
+  }
+}
